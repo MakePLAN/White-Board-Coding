@@ -1,0 +1,14 @@
+{
+  "global": {
+    "parseVersion": "1.4.0"
+  },
+  "applications": {
+    "_default": {
+      "link": "whiteboardcoding"
+    },
+    "whiteboardcoding": {
+      "applicationId": "96atI9Ob2e27xCeiC4tB9jcotfv1mGYfX26rfr3Q",
+      "masterKey": "F3t2jRWzdI8zTHBGwklVvWTcMrVeGO7PrazddiMJ"
+    }
+  }
+}

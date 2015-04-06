@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="https://cdn.firebase.com/js/client/2.0.6/firebase.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <Style>
+
+
+    body {
+          /* Location of the image */
+          background-image: url("image/snowing.gif");
+          
+          /* Background image is centered vertically and horizontally at all times */
+          background-position: center center;
+          
+          /* Background image doesn't tile */
+          background-repeat: no-repeat;
+          
+          /* Background image is fixed in the viewport so that it doesn't move when 
+             the content's height is greater than the image's height */
+          background-attachment: fixed;
+          
+          /* This is what makes the background image rescale based
+             on the container's size */
+          background-size: cover;
+          
+          /* Set a background color that will be displayed
+             while the background image is loading */
+          background-color: #464646;
+    }
+
+    center{
+        position: relative;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 40px;
+
+    }
+
+    table{
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        padding-top: 5px;
+        padding-bottom: 4px;
+        border-collapse: collapse;
+        border-spacing: 0;
+        position: relative;
+        top: 100px;
+        width:70%; 
+        margin-left: auto;
+        margin-right: auto;
+
+        
+    }
+
+
+    th{
+    border: 1px solid #98bf21;
+    padding: 3px 7px 2px 7px;
+    background-color: #A7C942;
+    color: #FFFFFF;
+    font-size: 30px;
+    }
+
+    tr.odd{
+        border: 1px solid #98bf21;
+        padding: 3px 7px 2px 7px;
+        background-color: #FFFFFF;
+        color: black;
+        font-size: 40px;
+    }
+
+    tr.even{
+        border: 1px solid #98bf21;
+        padding: 3px 7px 2px 7px;
+        background-color: #EAF2D3;
+        color: black;
+        font-size: 40px;
+    }
+ 
+    td{
+        padding: 3px 7px 2px 7px;
+        border: 1px solid #A7C942;
+        width: 20%;
+        vertical-align: middle;
+    }
+
+    button.find{
+        position: relative;
+        color: red;
+        font-size: 25px;
+        background: #FFD700; 
+        
+    }
+
+    button.new{
+        position: relative;
+        color: #6495ED;
+        font-size: 25px;
+        background: #FFD700; 
+        
+    }
+
+    button.submit{
+        position: relative;
+        color: red;
+        font-size: 25px;
+        background: #FFD700; 
+        
+    }
+
+    button.form{
+        position: relative;
+        color: #6495ED;
+        font-size: 25px;
+        background: #FFD700; 
+    
+    }
+
+    </Style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+</head>
+    <body>
+        <center>White Boarding Coding</center>
+        <div class="container table-responsive ">
+        <table id="choice" cellspacing = "0" cellpadding = "0" class="center table" style="text-align:center;">
+            <tr class="even">
+                <th style="text-align:center;">Choice Number</th>
+                <th style="text-align:center;">Word</th>
+                <th style="text-align:center;">Vote!</th>
+            </tr>
+            <tr class="odd">
+                <td>1</td>
+                <td>USC</td>
+                <td><button onclick ="vote1()" class="find" id="findbutton">Vote</button></td>
+            </tr>
+            <tr class="even">
+                <td>2</td>
+                <td>UCLA</td>
+                <td><button onclick ="vote2()" class="new" id="newbutton">Vote</button></td>
+            </tr>
+            <tr class="odd">
+                <td>3</td>
+                <td>Picture</td>
+                <td><button onclick ="vote3()" class="form" id="formbutton">Vote</button></td>
+            </tr>
+            <!--<tr class="even">
+                <td>4</td>
+                <td>Mountain</td>
+                <td><button onclick ="vote4()" class="submit" id="listbutton">Vote</button></td>
+            </tr>
+        -->
+        </table>
+    </div>
+
+        <script>
+
+            function vote1(){
+                var ref = new Firebase("https://whiteboardcoding.firebaseio.com/");
+                ref.child("Vote").set({
+                    "Choice": 1
+                });
+            };
+
+            function vote2(){
+                 var ref = new Firebase("https://whiteboardcoding.firebaseio.com/");
+                ref.child("Vote").set({
+                    "Choice": 2
+                });
+            };
+
+            function vote3(){
+                 var ref = new Firebase("https://whiteboardcoding.firebaseio.com/");
+                ref.child("Vote").set({
+                    "Choice": 3
+                });
+            };
+
+            function vote4(){
+                 var ref = new Firebase("https://whiteboardcoding.firebaseio.com/");
+                ref.child("Vote").set({
+                    "Choice": 4
+                });
+            };
+
+        </script>
+
+        
+              
+        
+    </body>
+</head>
+</html>
